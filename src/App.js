@@ -37,10 +37,10 @@ function App() {
     Axios.delete(`http://localhost:8080/user/${userEmail}`)
   }
 
-  const updateUser = (userEmail) => {
+  const updateUser = (userName, userEmail) => {
     Axios.put(`http://localhost:8080/user/${userEmail}`, {
-      name: newName,
-      email: newEmail
+      name: newName? newName : userName,
+      email: newEmail? newEmail : userEmail
     });
     setNewName("");
     setNewEmail("");
@@ -88,7 +88,7 @@ function App() {
               <input type="text" id="update-insert" onChange={(e) => {
                 setNewEmail(e.target.value)
               }} placeholder="New Email..." />
-              <button onClick={() => {updateUser(item.email)}}>Update</button>
+              <button onClick={() => {updateUser(item.name, item.email)}}>Update</button>
             </div>
           )
         })}
