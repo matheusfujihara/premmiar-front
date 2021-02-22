@@ -1,3 +1,3 @@
-# FRONT END REAC PREMMIAR
+# FRONT END REACT PREMMIAR
 * Projeto feito com a tecnologia reactJS.
 
